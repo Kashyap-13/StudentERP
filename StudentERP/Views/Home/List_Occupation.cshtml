@@ -1,0 +1,19 @@
+﻿@model List<StudentERP.Models.occupation>
+@Styles.Render("~/Content/css")
+@{
+    ViewBag.Title = "List_Occupation";
+}
+
+<h2>List_Occupation</h2>
+
+@{
+    var grid = new WebGrid(Model);
+    WebGridColumn[] subdetail ={
+                                  grid.Column(header:"Occupation",format:a=>a.name),grid.Column(header:"Edit",format:(a)=>Html.ActionLink("Edit","Add_subject",new{id=a.OccupationId},"Home"))
+
+                              };
+}
+<div class="dialog">
+
+    @grid.GetHtml(tableStyle: "PGrid", headerStyle: "Header", columns: subdetail)
+</div>

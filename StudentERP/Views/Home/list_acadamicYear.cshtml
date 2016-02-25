@@ -1,0 +1,20 @@
+﻿@model List<StudentERP.Models.acadamic_year>
+
+@Styles.Render("~/Content/css")
+
+@{
+    var grid = new WebGrid(Model);
+    WebGridColumn[] AcdYeardeatil ={
+                                  grid.Column(header:"Name",format:a=>a.Year),
+                                  grid.Column(header:"Edit",format:(a)=>Html.ActionLink("Edit","Add_acadamic_year",new{id=a.academicId},"Home"))
+
+                              };
+}
+<div class="dialog">
+
+    @grid.GetHtml(tableStyle: "PGrid", headerStyle: "Header", columns: AcdYeardeatil)
+</div>
+
+
+
+

@@ -1,0 +1,21 @@
+﻿@model List<StudentERP.Models.division>
+
+@Styles.Render("~/Content/css")
+
+@{
+    ViewBag.Title = "List_Div";
+}
+@{
+    var grid = new WebGrid(Model);
+    WebGridColumn[] divdetail ={
+                                  grid.Column(header:"Division",format:a=>a.name),grid.Column(header:"Edit",format:(a)=>Html.ActionLink("Edit","Add_standard",new{id=a.DivisonID},"Home"))
+
+                              };
+}
+<div class="dialog">
+
+    @grid.GetHtml(tableStyle: "PGrid", headerStyle: "Header", columns: divdetail)
+</div>
+
+
+

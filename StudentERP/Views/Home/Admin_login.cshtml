@@ -1,0 +1,20 @@
+﻿@model StudentERP.Models.login
+
+@{
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+@using (Html.BeginForm("Admin_login", "Home", FormMethod.Post))
+{
+    <div id="loginform">
+        <div id="mainlogin">
+            <h1>Log in</h1>
+            <form id="#">
+                @Html.TextBoxFor(txt => txt.email, new { @placeholder = "Username" })
+                @Html.TextBoxFor(txt => txt.pwd, new { @placeholder = "Password" })
+                <button type="submit"><i>IN</i></button>
+            </form>
+            <div id="note">@Html.ActionLink("Forgot your password?", "Admin_login", "Home")</div>
+        </div>
+    </div>  
+}

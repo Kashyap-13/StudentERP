@@ -1,0 +1,16 @@
+﻿@model StudentERP.Models.login
+@{
+    Layout = "~/Views/Shared/Layout1.cshtml";
+}
+
+@Styles.Render("~/Content/mysheet.css")
+
+<div id="loginform">
+    <div id="mainlogin">
+        <h1>Forgot Password</h1>
+        <form id="#">
+            @Html.TextBoxFor(txt => txt.email, new { @placeholder = "Enter Email" })
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>

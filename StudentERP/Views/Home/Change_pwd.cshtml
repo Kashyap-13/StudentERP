@@ -1,0 +1,74 @@
+﻿@model StudentERP.Models.change_pwd
+
+@{
+    ViewBag.Title = "Change Password";
+}
+
+<div class="dialog">
+    <div class="panel-default">
+
+        @using (Html.BeginForm("login", "home", FormMethod.Get))
+        {
+            <table width="100%">
+                <tr>
+                    <th colspan="3" class="header">Change Password</th>
+                </tr>
+
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                    <td class="subheader">@Html.LabelFor(lbl => lbl.opwd)</td>
+
+                    <td class="subheader">@Html.TextBoxFor(txt => txt.opwd)</td>
+
+                    <td>@Html.ValidationMessageFor(m => m.opwd)</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                    <td class="subheader">@Html.LabelFor(lbl => lbl.npwd)</td>
+
+                    <td class="subheader">@Html.TextBoxFor(txt => txt.npwd)</td>
+
+                    <td>@Html.ValidationMessageFor(m => m.npwd)</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                    <td class="subheader">@Html.LabelFor(lbl => lbl.cpwd)</td>
+
+                    <td class="subheader">@Html.TextBoxFor(txt => txt.cpwd)</td>
+
+                    <td>@Html.ValidationMessageFor(m => m.cpwd)</td>
+                </tr>
+
+
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" class="incenter"><input type="submit" value="Submit" class="bn" /></td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>

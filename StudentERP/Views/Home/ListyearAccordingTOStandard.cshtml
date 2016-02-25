@@ -1,0 +1,20 @@
+﻿@model List<StudentERP.Models.year_according_standard>
+@Styles.Render("~/Content/css")
+
+@{
+    ViewBag.Title = "ListyearAccordingTOStandard";
+}
+
+<h2>ListyearAccordingTOStandard</h2>
+
+@{
+    var grid = new WebGrid(Model);
+    WebGridColumn[] subdetail ={
+                                  grid.Column(header:"Standard",format:a=>a.astd),grid.Column(header:"Year",format:a=>a.ayear),grid.Column(header:"StartMonth",format:a=>a.smonth),grid.Column(header:"EndMonth",format:a=>a.emonth),grid.Column(header:"Edit",format:(a)=>Html.ActionLink("Edit","Add_subject",new{id=a.yearStandardId},"Home"))
+
+                              };
+}
+<div class="dialog">
+
+    @grid.GetHtml(tableStyle: "PGrid", headerStyle: "Header", columns: subdetail)
+</div>
